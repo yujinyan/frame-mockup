@@ -14,4 +14,9 @@
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+
+    <style name="TextAppearance.EditorLabel" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
 </resources>
