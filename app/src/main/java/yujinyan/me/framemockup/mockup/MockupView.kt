@@ -20,7 +20,18 @@ class MockupView(context: Context,
     }
 
     public var frame = FrameModel(R.drawable.f3, width = 1881, height = 1443)
+        set(value) {
+            field = value
+            frameBitmap = value.getBitmapInSize(resources, FRAME_WIDTH.dpToPx(), FRAME_HEIGHT.dpToPx())
+            invalidate()
+        }
+
     public var picture = PictureModel(R.drawable.p1, width = 1456, height = 1020)
+        set(value) {
+            field = value
+            pictureBitmap = picture.getBitmapInSize(resources, 1456, 1020)
+        }
+
 
     public var pictureBitmap: Bitmap? = null
         set(value) {
@@ -28,7 +39,7 @@ class MockupView(context: Context,
             invalidate()
         }
 
-    private var frameBitmap: Bitmap
+    public var frameBitmap: Bitmap
     private var paint: Paint
     private var frameLeft: Int = 0
     private var frameTop: Int = 0

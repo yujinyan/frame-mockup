@@ -3,11 +3,15 @@ package yujinyan.me.framemockup.model
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 class Picture(
         val width: Int,
         val height: Int,
-        private val resId: Int
+        @Json(name = "res_id")
+        val resId: Int
 ) {
     fun getBitmap(resources: Resources, reqWidth: Int, reqHeight: Int): Bitmap {
         val options = BitmapFactory.Options()
